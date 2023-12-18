@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import './styles/style.css'
+import { icons } from './assets/assets';
 
 function App() {
     const [weather, setweather] = useState(null);
@@ -27,14 +28,14 @@ function App() {
                         }}>
                             <input
                                 type='text'
-                                placeholder='Digite o nome da cidade'
+                                placeholder='Digite o nome da cidade...'
                                 value={city}
                                 onChange={(e) => setCity(e.target.value)}
                             />
                             <button type='submit'>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
                                     className="icon-search">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                 </svg>
                             </button>
 
@@ -42,16 +43,35 @@ function App() {
                     </section>
                     <section className='info'>
                         {weather ? (
-                            <div>
-                                <h2>Clima para {weather.name}, {weather.sys.country}</h2>
-                                <img src={`https://flagsapi.com/${weather.sys.country}/flat/48.png`} />
-                                <p>Descrição: {weather.weather[0].description}</p>
-                                <p>Temperatura: {weather.main.temp}°C</p>
-                                <p>Sensação termica {weather.main.feels_like}°C</p>
-                                <p>humidade: {weather.main.humidity}%</p>
-                                <p>velocidade do vento: {weather.wind.speed}m/s, seta aqui {weather.wind.deg}°</p>
-                                <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} />
-                            </div>
+                            <>
+                                <div className='flag'>
+                                    <img src={`https://flagsapi.com/${weather.sys.country}/flat/48.png`} />
+                                </div>
+                                <div className='div-2'>
+                                    <div className='temp'>
+                                        <p>{weather.main.temp} °C</p>
+                                        <p className='city-name'>{weather.name}, {weather.sys.country}</p>
+                                    </div>
+                                    <div className='city-info'>
+                                        <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} />
+                                        <p>{weather.weather[0].description}</p>
+                                    </div>
+                                    <div>
+                                        <div className='icons'>
+                                            <img src={icons.humidity} />
+                                            <p>{weather.main.humidity} %</p>
+                                        </div>
+                                        <div className='icons'>
+                                            <img src={icons.thermal} />
+                                            <p>{weather.main.feels_like} °C</p>
+                                        </div>
+                                        <div className='icons'>
+                                            <img src={icons.wind} />
+                                            <p>{weather.wind.speed} m/s</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
                         ) : (
                             <p>nome incorreto</p>
                         )}
