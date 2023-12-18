@@ -111,3 +111,9 @@ button{
 .icons img{
     width: 1.5rem;
 }
+.intro-name{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 10rem;
+}

@@ -73,7 +73,7 @@ function App() {
                                 </div>
                             </>
                         ) : (
-                            <p>nome incorreto</p>
+                            <p className='intro-name'>Weather App</p>
                         )}
                     </section>
                 </div>
