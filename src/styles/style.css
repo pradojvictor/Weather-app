@@ -40,11 +40,10 @@
     -webkit-backdrop-filter: blur( 10px );
     
     width: 50%;
-    /* align-items: center; */
-
 }
 .search form {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -53,15 +52,23 @@
 }
 input{
     border-style: none;
-
+    padding: 10px;
+    margin: 1rem;
+    width: 15rem;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 1.5rem;
 }
-/* button{
+button{
     width: 6rem;
     height: 6rem;
     background-color: #DD8D57;
     border-style: none;
     cursor: pointer;
-} */
+}
 .icon-search{
     height: 50%;
     color: white;
