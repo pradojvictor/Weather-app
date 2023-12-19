@@ -178,6 +178,22 @@ input{
         width: 85%;
         height: 5rem;
     }
+    .div-city h3{ 
+        margin: 0rem 0rem 0rem 2rem;
+    }
+    .line{
+        margin: 2.5rem 2rem;
+    }
+    .btn-option{
+        width: 4rem;
+
+    }
+    .div-btn-option{
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        
+    }
 }
 
 @media screen and (max-width: 699px){
@@ -219,7 +235,7 @@ input{
         color: white;
         font-size: 1.5rem;
     }
-    button{
+    .btn-submit{
         width: 4rem;
         height: 4rem;
         border-radius: 5px;
@@ -231,11 +247,34 @@ input{
         width: auto;
         padding: 0px;
         margin: 3rem;
+        padding-top: 1rem;
     }
     .icons{
         align-items: center;
         color: white;
         margin: 1rem 0px 0px 0px;
         gap: 1rem;
+    }
+    .div-city h3{ 
+        display: none;
+    }
+    .line{
+        display: none;
+    }
+    .btn-option{
+        width: 5rem;
+        height: 2rem;
+
+    }
+    .div-btn-option{
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem; 
+        padding: 1rem; 
+    }
+}
+@media screen and (max-height: 870px){
+    .line{
+        margin: 1rem 2rem;
     }
 }
