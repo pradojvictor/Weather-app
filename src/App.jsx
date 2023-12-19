@@ -59,7 +59,17 @@ function App() {
                             <div className='line'></div>
                            
                         </form>
-                        
+                        <form onSubmit={(e) => {
+                            e.preventDefault();
+                            fetchWeather();
+                        }}>
+                        <div className='div-city'>
+                                <button className='btn-cities' type='submit' onClick={() => setCity('New York')}><h3>New York, US</h3></button>
+                                <button className='btn-cities' type='submit' onClick={() => setCity('Tokyo')}><h3>Tokyo, JP</h3></button>
+                                <button className='btn-cities' type='submit' onClick={() => setCity('Seoul')}><h3>Seoul, KR</h3></button>
+                                <button className='btn-cities' type='submit' onClick={() => setCity('Paris')}><h3>Paris, FR</h3></button>
+                            </div>
+                        </form>
                     </section>
                     <section className='info'>
                         {weather ? (
