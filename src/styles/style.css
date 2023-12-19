@@ -114,7 +114,26 @@ input{
     font-weight: 400;
     color: white;
 }
-
+.div-city{
+    display: flex;
+    flex-direction: column;
+}
+.btn-cities{
+    border: none;
+    border-style: none;
+    background-color: transparent;
+    width: 15rem;
+}
+.div-city h3{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0rem 0rem 2rem;
+    cursor: pointer;
+}
 
 .city-info{
     color: white;
